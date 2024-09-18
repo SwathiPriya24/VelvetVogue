@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velvet Vogue</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+    <style>
+        :root {
+            --primarycolor: #490331;
+            --secondarycolor: #a0a3a9;
+            --footercolor: #343a40;
+            --fontheading: "Crimson Text", serif;
+            --fontcontent: "Inria Sans", sans-serif;
+        }
+
+        .hero {
+            background: url(./img/dresssbg.jpg) no-repeat center center/cover;
+            height: 80vh;
+            color: var(--primarycolor) !important;
+            font-family: var(--fontheading);
+
+        }
+
+        h2 {
+            font-weight: 600;
+        }
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        b {
+            color: var(--primarycolor);
+            font-family: var(--fontheading);
+        }
+
+
+
+        p,
+        a {
+            text-decoration: none !important;
+            font-family: var(--fontcontent) !important;
+        }
+
+        .btn {
+            background-color: var(--primarycolor);
+            color: white;
+            border: none;
+            font-family: var(--fontcontent)
+        }
+
+        .btn:hover {
+            background-color: var(--secondarycolor);
+            color: var(--primarycolor);
+        }
+
+        .btn-primary:not(:disabled):not(.disabled).active,
+        .btn-primary:not(:disabled):not(.disabled):active,
+        .show>.btn-primary.dropdown-toggle,
+        .btn-primary:focus {
+            color: #fff;
+            background-color: var(--primarycolor);
+            border: none;
+            box-shadow: none !important;
+
+        }
+
+        .navbar-toggler:focus {
+            text-decoration: none;
+            outline: 0;
+            box-shadow: none !important;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .navbar {
+            background-color: #ece9ea !important;
+        }
+
+        .navbar-brand img {
+            height: 55px;
+        }
+
+        .nav-link {
+            color: var(--primarycolor) !important;
+        }
+
+        .navbar-light .navbar-nav .nav-link:focus,
+        .navbar-light .navbar-nav .nav-link:hover {
+            color: var(--secondarycolor) !important;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+
+        .card-img-top {
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .card {
+            transition: transform 0.3s ease;
+            overflow: hidden;
+            background-color: var(--secondarycolor);
+            border: none !important;
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+        }
+
+
+
+        .footer {
+            background-color: var(--footercolor);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .carousel-item.active,
+        .carousel-item-next,
+        .carousel-item-prev {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-control:focus {
+            color: #495057;
+            background-color: #fff;
+            border-color: #070707 !important;
+            outline: 0;
+            box-shadow: none !important;
+        }
+
+        .carousel-inner {
+            display: flex;
+            justify-content: center;
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: var(--bs-accordion-active-color);
+            background-color: #a0a3a9;
+            box-shadow: none !important;
+        }
+
+        .accordion-button:focus {
+            z-index: 3;
+            outline: 0;
+            box-shadow: none !important;
+        }
+
+        .testimonial-card {
+            max-width: 300px;
+            background-color: var(--primarycolor);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-stars {
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-text {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        .testimonial-position {
+            font-size: 0.75rem;
+            color: #e0e0e0;
+        }
+
+        .zoom-animation-continous {
+            animation: zoomInOut 5s infinite;
+        }
+
+        .fab {
+            color: white;
+        }
+
+        .footertxt {
+            color: white !important;
+        }
+
+        .nav-link {
+            color: black;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease, color 0.3s ease;
+           
+        }
+
+        .nav-link:hover {
+            transform: scale(1.2);
+            
+        }
+
+
+        @keyframes zoomInOut {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="./img/vv.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#collection">Collection</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero d-flex align-items-center text-center">
+        <div class="container">
+            <h1><b>Welcome to Velvet Vogue</b></h1>
+            <h5>Discover the latest trends in fashion.</h5>
+            <a href="#collection" class="btn btn-primary btn-lg">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about py-4 ">
+        <div class="container text-center">
+            <h2 class="py-4">About Us</h2>
+            <p>
+                At Velvet Vogue, we are a boutique dedicated to bringing you the finest in fashion. <br>
+                Our mission is to redefine elegance by offering a curated collection of luxurious,
+                handcrafted fashion that celebrates the richness of Indian heritage. We are committed to delivering
+                exceptional quality, timeless designs, and a personalized shopping experience that empowers every
+                customer to step into the glam with confidence and style.
+                <br>
+                From timeless wardrobe staples to stunning showpieces, our collection is meticulously curated for those
+                who value quality, style, and individuality. Whether you’re stepping out for a
+                night on the town or looking for the perfect ensemble to elevate your day, Velvet Vogue is here to
+                ensure you shine at every moment.
+                <br>
+                Our commitment to excellence goes beyond just our products. We strive to create an exceptional shopping
+                experience, offering personalized service and attention to detail that makes each visit to our boutique
+                truly special. At Velvet Vogue, we invite you to step into the glam and discover a world where luxury
+                meets the ethereal beauty of the moonlit sky.
+                <br>
+                Thank you for choosing Velvet Vogue where every step is a step into elegance.
+            </p>
+        </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section id="collection" class="collection py-4">
+        <div class="container">
+            <h2 class="text-center pb-4">Our Collection</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="./img/dresss1.webp" class="card-img-top" alt="Collection Item 1">
+                        <div class="card-body">
+                            <p class="card-text"><b>Luxury Wedding Gowns</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="./img/dresss2.jpg" class="card-img-top" alt="Collection Item 2">
+                        <div class="card-body">
+                            <p class="card-text"><b>Luxury Groom's Suite </b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="./img/dress3.jpg" class="card-img-top" alt="Collection Item 3">
+                        <div class="card-body">
+                            <p class="card-text"><b>Bridal Lehanga</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="./img/dresss4.webp" class="card-img-top" alt="Collection Item 3">
+                        <div class="card-body">
+                            <p class="card-text"><b>Pure Kanchivaram Saree</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="./img/dress5.jpg" class="card-img-top" alt="Collection Item 3">
+                        <div class="card-body">
+                            <p class="card-text"><b>Designer Wear</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="./img/dress6.jpg" class="card-img-top" alt="Collection Item 3">
+                        <div class="card-body">
+                            <p class="card-text"><b>Jumpsuit</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="d-flex justify-content-center align-items-center">
+            <button class=" btn btn-primary btn-lg ">See
+                More...</button> -->
+        </div>
+        </div>
+    </section>
+
+    <!-- services -->
+    <section id="services" class="services pb-4  ">
+        <h2 class="text-center pb-4">Services</h2>
+        <div class="container">
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                            aria-controls="panelsStayOpen-collapseOne">
+                            <h5>Custom Bridal Gown Design</h5>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                        <div class="accordion-body">
+                            <p>Work with our expert designers to create a one-of-a-kind bridal gown tailored to
+                                your vision. From fabric selection to intricate detailing, we ensure your dream dress is
+                                brought to life.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseTwo">
+                            <h5>Personalized Styling Consultations</h5>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <p>Book a one-on-one consultation with our in-house stylist to find the perfect outfit for
+                                any occasion, be it a wedding, red-carpet event, or festive celebration.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseThree">
+                            <h5>Luxury Saree Collection</h5>
+
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <p>Explore our exclusive collection of premium Kanchivaram and Banarasi sarees. We provide
+                                customization options for borders, embroidery, and blouse designs to complement your
+                                look.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseFour">
+                            <h5>Tailoring and Alteration Services</h5>
+
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <p>Ensure your outfit fits perfectly with our in-house tailoring and alteration services.
+                                Our skilled tailors work on precision adjustments to make every garment flawless.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseFive">
+                            <h5>Wedding Ensemble Packages</h5>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <p>Get complete wedding attire solutions for the bride, groom, and bridal party. Choose from
+                                pre-designed packages or customize your own to match your wedding theme.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false"
+                            aria-controls="panelsStayOpen-collapseSix">
+                            <h5>Virtual Shopping Experience</h5>
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <p>Can’t visit our boutique in person? Book a virtual shopping appointment where our team
+                                will walk you through our collections and help you select the perfect pieces online.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- testimonal -->
+    <section id="testimonal" class="testimonal  py-4 ">
+        <div class="container text-center ">
+
+            <h2 class="text-center"> Client Testimonials</h2>
+
+            <div class="container mt-5">
+                <div class="row ">
+                    <div class="testimonial-card mx-auto">
+                        <div class="testimonial-title">
+                            <i class="fas fa-thumbs-up"></i> Ananya R
+                        </div>
+                        <img src="./img/girl1.jpg" alt="User Image">
+                        <div class="testimonial-stars">
+                            ★★★★★
+                        </div>
+                        <div class="testimonial-text">
+                            Amazing Service and Stunning Collection! <br>
+                            "I was blown away by the collection at Velvet Vogue! The wedding gown I bought for my
+                            special
+                            day was an
+                            absolute showstopper. The attention to detail and the quality were beyond my expectations.
+                            The
+                            staff
+                            were incredibly helpful, making my shopping experience smooth and enjoyable. Highly
+                            recommend
+                            Velvet
+                            Vogue to anyone looking for luxury fashion!"
+                        </div>
+                    </div>
+                    <div class="testimonial-card mx-auto">
+                        <div class="testimonial-title">
+                            <i class="fas fa-thumbs-up"></i> Sarah K
+                        </div>
+                        <img src="./img/girl2.jpg" alt="User Image">
+                        <div class="testimonial-stars">
+                            ★★★★★
+                        </div>
+                        <div class="testimonial-text">
+                            Exceptional Quality and Style <br>
+                            "Velvet Vogue has become my go-to boutique for elegant and unique outfits. I love how every
+                            piece feels
+                            like it was made just for me. The craftsmanship is top-notch, and the designs are always
+                            on-trend. I’ve
+                            received so many compliments on my sarees and dresses from here. Absolutely worth every
+                            penny!"
+                        </div>
+                    </div>
+                    <div class="testimonial-card mx-auto">
+                        <div class="testimonial-title">
+                            <i class="fas fa-thumbs-up"></i> Priya J
+                        </div>
+                        <img src="./img/girl3.jpg" alt="User Image">
+                        <div class="testimonial-stars">
+                            ★★★★★
+                        </div>
+                        <div class="testimonial-text">
+                            Unmatched Luxury and Style <br>
+                            "From the moment I walked into Velvet Vogue, I felt like royalty. The boutique's ambiance
+                            and stunning
+                            collection of luxury gowns and sarees truly stand out. I recently purchased a gown for a
+                            red-carpet
+                            event, and it was an absolute hit! Thank you, Velvet Vogue, for making me feel glamorous!"
+                        </div>
+                    </div>
+                    <!-- <div class="testimonial-card mx-auto">
+                        <div class="testimonial-title">
+                            <i class="fas fa-thumbs-up"></i> Neha M
+                        </div>
+                        <img src="https://via.placeholder.com/80" alt="User Image">
+                        <div class="testimonial-stars">
+                            ★★★★★
+                        </div>
+                        <div class="testimonial-text">
+                            Best Boutique in Town! <br>
+                            "I have shopped at many boutiques, but Velvet Vogue stands out for its unique designs and
+                            exceptional
+                            customer service. Whether it’s for a wedding or a special event, I always find something
+                            stunning here.
+                            The personal touch and customization options are simply unparalleled."
+                        </div>
+                    </div> -->
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact bg-light py-4">
+        <h2 class="text-center ">Contact Us</h2>
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="col">
+                <img class="zoom-animation-continous" style="height: 200px;" src="./img/vv.png" alt="Velvet Vogue Logo">
+            </div>
+            <form action="#" method="post" class="mt-4 ">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="message" rows="5" placeholder="Your Message"
+                        required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- <footer class="footer bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Velvet Vouge. All rights reserved.</p>
+    </footer> -->
+
+    <footer class="text-center bg-body-tertiary">
+        <!-- Grid container -->
+        <div class="container pt-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a data-mdb-ripple-init class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
+
+                <!-- Twitter -->
+                <a data-mdb-ripple-init class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
+
+                <!-- Google -->
+                <a data-mdb-ripple-init class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-google"></i></a>
+
+                <!-- Instagram -->
+                <a data-mdb-ripple-init class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
+
+                <!-- Linkedin -->
+                <!-- <a data-mdb-ripple-init class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a> -->
+                <!-- Github -->
+                <!-- <a data-mdb-ripple-init class="btn btn-link btn-floating btn-lg text-body m-1" href="#!" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a> -->
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: var(--footercolor)">
+
+            <a class="footertxt text-body" href="#">© 2024 Copyright: VelvetVouge.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
