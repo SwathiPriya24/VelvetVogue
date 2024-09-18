@@ -1,0 +1,248 @@
+:root {
+    --primarycolor: #490331;
+    --secondarycolor: #a0a3a9;
+    --footercolor: #343a40;
+    --fontheading: "Crimson Text", serif;
+    --fontcontent: "Inria Sans", sans-serif;
+}
+
+.hero {
+    background: url(./img/dresssbg.jpg) no-repeat center center/cover;
+    height: 80vh;
+    color: var(--primarycolor) !important;
+    font-family: var(--fontheading);
+
+}
+
+h2 {
+    font-weight: 600;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+b {
+    color: var(--primarycolor);
+    font-family: var(--fontheading);
+}
+
+
+
+p,
+a {
+    text-decoration: none !important;
+    font-family: var(--fontcontent) !important;
+}
+
+.btn {
+    background-color: var(--primarycolor);
+    color: white;
+    border: none;
+    font-family: var(--fontcontent)
+}
+
+.btn:hover {
+    background-color: var(--secondarycolor);
+    color: var(--primarycolor);
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle,
+.btn-primary:focus {
+    color: #fff;
+    background-color: var(--primarycolor);
+    border: none;
+    box-shadow: none !important;
+
+}
+
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: none !important;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.navbar {
+    background-color: #ece9ea !important;
+}
+
+.navbar-brand img {
+    height: 55px;
+}
+
+.nav-link {
+    color: var(--primarycolor) !important;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: var(--secondarycolor) !important;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+.card-img-top {
+    height: 300px;
+    object-fit: cover;
+}
+
+.card {
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    background-color: var(--secondarycolor);
+    border: none !important;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+
+
+.footer {
+    background-color: var(--footercolor);
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #070707 !important;
+    outline: 0;
+    box-shadow: none !important;
+}
+
+.carousel-inner {
+    display: flex;
+    justify-content: center;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--bs-accordion-active-color);
+    background-color: #a0a3a9;
+    box-shadow: none !important;
+}
+
+.accordion-button:focus {
+    z-index: 3;
+    outline: 0;
+    box-shadow: none !important;
+}
+
+.testimonial-card {
+    max-width: 300px;
+    background-color: var(--primarycolor);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.testimonial-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.testimonial-stars {
+    color: #ffc107;
+    margin-bottom: 10px;
+}
+
+.testimonial-text {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.testimonial-position {
+    font-size: 0.75rem;
+    color: #e0e0e0;
+}
+
+.zoom-animation-continous {
+    animation: zoomInOut 5s infinite;
+}
+
+.fab {
+    color: white;
+}
+
+.footertxt {
+    color: white !important;
+}
+
+.nav-link {
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+   
+}
+
+.nav-link:hover {
+    transform: scale(1.2);
+    
+}
+
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
